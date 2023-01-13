@@ -1,6 +1,10 @@
 package codeGenerator;
 
-import static codeGenerator.TypeAddress.Direct;
+import codeGenerator.AddressStrategy.DirectAddressStrategy;
+import codeGenerator.AddressStrategy.ImidiateAddressStrategy;
+import codeGenerator.AddressStrategy.IndirectAddressStrategy;
+
+import static codeGenerator.TypeAddress.*;
 
 /**
  * Created by mohammad hosein on 6/28/2015.
@@ -8,24 +12,24 @@ import static codeGenerator.TypeAddress.Direct;
 
 public class Address {
     public int num;
-    public TypeAddress Type;
     public varType varType;
+
+    public AddressContext addressContext = new AddressContext();
 
     public Address(int num, varType varType , TypeAddress... Type) {
         this.num = num;
-        this.Type = Type.length == 0 ? Direct : Type[0];
+
+        if (Type.length == 0 || Type[0] == Direct)
+            addressContext.setAddressStrategy(new DirectAddressStrategy());
+        else if (Type[0] == Indirect)
+            addressContext.setAddressStrategy(new IndirectAddressStrategy());
+        else if (Type[0] == Imidiate)
+            addressContext.setAddressStrategy(new ImidiateAddressStrategy());
+
         this.varType = varType;
     }
 
     public String toString() {
-        switch (Type) {
-            case Direct:
-                return num + "";
-            case Indirect:
-                return "@" + num;
-            case Imidiate:
-                return "#" + num;
-        }
-        return num + "";
+        return addressContext.returnString(num);
     }
 }
