@@ -31,8 +31,11 @@ public class Memory {
         return lastDataAddress - dataSize;
     }
 
-    public int saveMemory() {
+    public void saveMemory() {
         codeBlock.add(new _3AddressCode());
+    }
+
+    public int returnSize() {
         return codeBlock.size() - 1;
     }
 

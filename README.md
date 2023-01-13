@@ -20,6 +20,10 @@ Reza Erfan Arani - 98105919 - Software Lab #7 - Refactoring
 
 در این قسمت من یک بخش از کلاس CodeGenerator که duplication داشت را به یک متد بردم و duplication را حذف کردم.
 
+### Separate query from modifier
+
+در این قسمت من تابع `saveMemory()` در کلاس `Memory` را به دو بخش شکاندم زیرا دو بخش میشد به یک بخش command و query شکسته شود و بهتر بود جدا نوشته شود.
+
 ## Answer To Questions
 
 ### هر یک از مفاهیم زیر را در یک خط توضیح دهید.
