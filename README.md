@@ -8,6 +8,10 @@ Reza Erfan Arani - 98105919 - Software Lab #7 - Refactoring
 
 در قدم اول من در برنامه هر جا `ArrayList` از اول تعریف شده بود را طبق قوائد Loose Coupling به `List` تبدیل کردم.
 
+### Speculative Generality
+
+در این بخش من در کلاس Address که دو constructor داشت یکی را که اضافی بود حذف کردم.
+
 ## Answer To Questions
 
 ### هر یک از مفاهیم زیر را در یک خط توضیح دهید.
