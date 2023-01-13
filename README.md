@@ -16,6 +16,10 @@ Reza Erfan Arani - 98105919 - Software Lab #7 - Refactoring
 
 در این بخش من switch case داحل کلاس Address رو ورداشتم و جاش یک Strategy گذاشتم. درست است که الان خیلی لازم نبود ولی در آینده اگر در هر کدام از آن caseها بخواهد کاری انجام شود می شود به راحتی تنها در کلاس‌های strategy مربوطه اضافه شود.
 
+### Duplicate Code
+
+در این قسمت من یک بخش از کلاس CodeGenerator که duplication داشت را به یک متد بردم و duplication را حذف کردم.
+
 ## Answer To Questions
 
 ### هر یک از مفاهیم زیر را در یک خط توضیح دهید.
